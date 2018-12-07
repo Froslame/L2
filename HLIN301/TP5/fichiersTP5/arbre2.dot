@@ -1,0 +1,8 @@
+digraph G {   label = "Dictionnaire apres ajout du mot" 
+graph [ fontname=fixed, fontsize = 20];node [ fontname=fixed, fontsize = 20];edge [ fontname=fixed, fontsize = 20];93870845677552 [label="false" ] ;
+93870845677552 -> 93870845680288 [color="red",label="0" ] ;
+93870845680288 [label="false" ] ;
+93870845680288 -> 93870845680320 [color="blue",label="1" ] ;
+93870845680320 [label="true" ] ;
+
+ }

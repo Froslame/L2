@@ -1,0 +1,2 @@
+template<typename T>
+MyVector<T>::MyVector() : _data(new T[1]), _n(0), _alloc(1) {}

@@ -1,0 +1,19 @@
+#Variable
+CO=g++ -Wall -c
+CC=g++ -Wall -o
+
+F=
+
+#Commande
+all : hello
+
+$(F) : $(F)
+
+$(F).o : $(F).cpp
+	$(CO) $(F).cpp
+
+$(F).o : $(F).h
+	$(CO) $(F)_main.h
+
+clean:
+	rm *.o

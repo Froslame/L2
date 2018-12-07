@@ -1,0 +1,19 @@
+#include "TD2.h"
+#include Itv::Itv(float k, float p) : a(k), b(p) {
+  if (a>b){float tmp=a; a=b; b=tmp;
+    cout<<"Valeur echange"<<endl;
+  }
+}
+Itv::Itv() : a(0.0), b(0.0) {}
+//Lecture
+float Itv::getSup()const{return b;}
+float Itv::getInf()const{return a;}
+
+void Itv::affiche()const{std::cout<<"["<<a<<";"<<b<<"]"<<std::endl;}
+void Itv::longueur()const{return b-a;}
+
+bool Itv::appart(float x)const{return (x<=b && x>=a);}
+
+//Ecriture
+void Itv::setSup(float sup){b=sup;}
+void Itv::setInf(float inf){a=inf;}

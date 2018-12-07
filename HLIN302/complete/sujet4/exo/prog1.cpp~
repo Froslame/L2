@@ -1,0 +1,52 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+#include "prog.h"
+#include "prog1.h"
+
+using namespace std;
+
+//-------- CLASSE TAB_OPTION ----------
+
+//Constructeur
+tabOption::tabOption(): tab(), taille(0) {}
+
+//Lecture
+int tabOption::getOptionIndex(string k)const{
+  bool res=false;
+  size_t i = 0;
+  while (!res && (i<taille)){
+    res = ((tab[i].getNom()==k) || (tab[i]).getRaccourci()==k);
+    i++;
+  }
+  return res;
+}
+
+int tabOption::getOptionId(string k) const {
+  int i = getOptionIndex(k);
+  return (i>=0 ? tab[i].getId():-1);
+}
+
+bool tabOption::optionHasArgument(string k) const {
+  size_t i = getOptionIndex(k);
+  return (tab[i].getType() != option::AUCUN);
+}
+
+//Ecriture
+void tabOption::addOption(option x){
+  if(taille==N){
+    cerr<<"TROP D'OPTION"<<endl;
+    terminate();
+  }
+  tab[taille]=x;
+  taille++;
+}
+
+//Autre
+void tabOption::print() const{
+  cout<<"Options :"<<endl;
+  for (size_t i = 0;i<taille;i++){
+    tab[i].print();
+  }
+}

@@ -1,0 +1,19 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+#include "triBulle.h"
+
+using namespace std;
+
+void triBulle(TableauCellule& T){
+  bool = true;
+  for(int i=0;i<T.size()-1;i++){
+    if(T.at(i)>T.at(i)){
+      bool = false;
+      
+    }
+  }
+  if(bool)
+    triBulle(T);
+}

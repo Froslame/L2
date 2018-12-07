@@ -1,0 +1,14 @@
+#include <iostream>
+#include "TD2.h"
+
+
+
+int main(){
+  Itv test(5,1);
+
+  std::cout<<test.getInf()<<" : "<<test.getSup()<<std::endl;
+  test.affiche();
+  
+  
+  return 0;
+}

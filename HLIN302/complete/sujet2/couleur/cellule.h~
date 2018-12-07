@@ -1,0 +1,39 @@
+#ifndef cell_H
+#define cell_H
+
+class cell{
+   public:
+  //private:
+  enum Couleur{
+    NOIR,
+    BLEU,
+    VERT,
+    ROUGE,
+    NB_COULEURS
+  };
+  
+ private:
+  unsigned int x,y;
+  bool vivante;
+  Couleur couleur;
+  
+
+ public:
+  cell();
+  cell(unsigned int,unsigned int,bool);
+
+  bool estVoisin(const cell&)const;
+
+  unsigned int getX()const;
+  unsigned int getY()const;
+  bool estVivante()const;
+  Couleur getCouleur()const;
+
+  void setVivante(bool);
+  void setX(unsigned int);
+  void setY(unsigned int);
+
+  bool CelluleEstDeLaCouleur(const cell&, cell::Couleur couleur);
+};
+
+#endif

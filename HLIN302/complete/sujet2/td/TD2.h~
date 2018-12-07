@@ -1,0 +1,26 @@
+#ifndef TD2_H
+#define TD2_H
+
+class Itv{
+ public:
+  float a;
+  float b;
+
+  Itv(float k, float p):a(k),b(p){
+  }
+  
+  //Lecture
+  float getSup(){return b;}
+  float getInf(){return a;}
+
+  void affiche(){std::cout<<"["<<a<<";"<<b<<"]"<<std::endl;}
+  void longueur(){return b-a;}
+
+  bool appart(string x){return (x<=b && x>=a);}
+    
+  //Ecriture
+  void setSup(float sup){b=sup;}
+  void setInf(float inf){a=inf;}
+}
+
+#endif

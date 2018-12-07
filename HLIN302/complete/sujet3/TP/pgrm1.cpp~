@@ -1,0 +1,16 @@
+#include "pgrm.h"
+#include "pgrm1.h"
+#include <iostream>
+#include <string>
+using namespace std;
+
+//--class Population
+Population::Population() {
+  for(size_t i=0;i<5;i++){
+    for(size_t j=0;j<5;j++){
+      Pop[i][j].setX(i);
+      Pop[i][j].setY(j);
+      Pop[i][j].setVivante(false);
+    }
+  }
+}

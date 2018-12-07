@@ -1,0 +1,372 @@
+\hypertarget{_huffman_8c}{}\section{Huffman.\+c File Reference}
+\label{_huffman_8c}\index{Huffman.\+c@{Huffman.\+c}}
+
+
+Compresse et Décompresse des fichiers texte grace a la méthode d\textquotesingle{}Huffman.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_huffman_8c_a598ea65f0a8f860fc7e16343fe1851a1}\label{_huffman_8c_a598ea65f0a8f860fc7e16343fe1851a1}} 
+\#define {\bfseries E\+DF}~-\/1
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{_huffman_8c_a6228456004a980a8cbf37dc7e7fe4781}{itoa}} (int i, char $\ast$s)
+\begin{DoxyCompactList}\small\item\em Change entier en string. \end{DoxyCompactList}\item 
+char $\ast$$\ast$ \mbox{\hyperlink{_huffman_8c_a650f579a882a3ad87b3784175480e6e0}{strsplit}} (char $\ast$txt, char sep)
+\begin{DoxyCompactList}\small\item\em découpe une chaine de caractere \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_huffman_8c_a740df2e1d5277c49df31ef01aa331661}{verif}} (char $\ast$monfic)
+\begin{DoxyCompactList}\small\item\em verifie si le fichier texte de lecture est ouvrable et initialise l\textquotesingle{}occurence chaque éléments \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{_huffman_8c_a48ff9ba9d2005795277eedd0537a81ab}\label{_huffman_8c_a48ff9ba9d2005795277eedd0537a81ab}} 
+void \mbox{\hyperlink{_huffman_8c_a48ff9ba9d2005795277eedd0537a81ab}{calcul\+\_\+nbocc}} ()
+\begin{DoxyCompactList}\small\item\em Affiche chaque caractere \+: nombre d\textquotesingle{}occurence. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_huffman_8c_a60fd53f592a14f4524c29a833de459da}{calcul\+\_\+nbdiff}} ()
+\begin{DoxyCompactList}\small\item\em calcul le nombre de caractere différente \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_af1002effe6c90c63b009eae96150109a}{tab\+\_\+feuille}} (int new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]}, int new\+\_\+taille)
+\begin{DoxyCompactList}\small\item\em Initialise l\textquotesingle{}abre d\textquotesingle{}Huffman 0 -\/$>$ fils gauche 1 -\/$>$ fils droit 2 -\/$>$ pere 3 -\/$>$ nom 4 -\/$>$ nombre occurence. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_ada60aa9ed36538ba8d86e288e2301e4e}{comp\+\_\+feuille}} (int new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]}, int new\+\_\+taille)
+\begin{DoxyCompactList}\small\item\em rempli l\textquotesingle{}arbre de Huffman créer au dessus \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a445288c409772fb235075e0e34273dac}{affiche}} (int new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]}, int new\+\_\+taille)
+\begin{DoxyCompactList}\small\item\em fonction d\textquotesingle{}affichage du tableau correspondant à l\textquotesingle{}arbre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a3ff81be6b2fb4026b46fcb1152e9a08a}{init\+\_\+binaire}} (char $\ast$code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]})
+\begin{DoxyCompactList}\small\item\em initialise le tableau correspondant au code binaire de l\textquotesingle{}arbre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a0bb5e256b4923fc1810315359ce70270}{binaire}} (int new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]}, int new\+\_\+taille, char $\ast$code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em rempli le tableau correpondant au code binaire de l\textquotesingle{}arbre \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a246d2d8a40abd5830cf5ddc15d649de4}{affiche\+\_\+code}} (char $\ast$code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em fonction d\textquotesingle{}affichage du tableau du code binaire \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_acf6f954911d13cd20715a00cc0f258bf}{affiche\+\_\+code\+\_\+ext}} (char $\ast$new\+\_\+code\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, int taille\+\_\+arbre)
+\begin{DoxyCompactList}\small\item\em fonction d\textquotesingle{}affichage d\textquotesingle{}un tableau du code binaire apres extraction \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a97b9fadd6fd2e427965ac1308c6c66aa}{write\+\_\+code}} (char $\ast$code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em Rempli un fichier texte du code binaire de l\textquotesingle{}arbre. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_huffman_8c_a7c1d2299054f08c8e55b8379061939a4}{read\+\_\+taille}} (char $\ast$fichier)
+\begin{DoxyCompactList}\small\item\em Lis la taille de l\textquotesingle{}arbre grace au fichier texte. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_ab4139f414ed775901f0814c8055d5e87}{read\+\_\+arbre}} (char $\ast$fichier, char $\ast$new\+\_\+code\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]})
+\begin{DoxyCompactList}\small\item\em extrait le code binaire d\textquotesingle{}un arbre stocker dans un fichier texte \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_a67b308623973a74b8a3d528da4999a90}{compression}} (char $\ast$code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]}, char $\ast$fichier)
+\begin{DoxyCompactList}\small\item\em Compresse le fichier grace au tableau du code binaire. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_huffman_8c_af8ec6d65f7972a5352873f62669474ba}{decompression}} (char $\ast$fichier)
+\begin{DoxyCompactList}\small\item\em decompresse un fichier compresser \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_huffman_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Fonction Main. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{_huffman_8c_afd9e4dd7c77efccb7a54d660960971d6}\label{_huffman_8c_afd9e4dd7c77efccb7a54d660960971d6}} 
+int {\bfseries nbocc} \mbox{[}256\mbox{]}
+\item 
+\mbox{\Hypertarget{_huffman_8c_a29bf3fc0ffe4e72e45f0c84ab4f8cd1e}\label{_huffman_8c_a29bf3fc0ffe4e72e45f0c84ab4f8cd1e}} 
+int {\bfseries taille} =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Compresse et Décompresse des fichiers texte grace a la méthode d\textquotesingle{}Huffman. 
+
+\begin{DoxyAuthor}{Author}
+Gracia-\/\+Moulis Kevin 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+29 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2 Decembre 2018 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_huffman_8c_a445288c409772fb235075e0e34273dac}\label{_huffman_8c_a445288c409772fb235075e0e34273dac}} 
+\index{Huffman.\+c@{Huffman.\+c}!affiche@{affiche}}
+\index{affiche@{affiche}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{affiche()}{affiche()}}
+{\footnotesize\ttfamily void affiche (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]},  }\item[{int}]{new\+\_\+taille }\end{DoxyParamCaption})}
+
+
+
+fonction d\textquotesingle{}affichage du tableau correspondant à l\textquotesingle{}arbre 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em new\+\_\+nbocc} & tableau a afficher \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+taille} & taille tableau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a246d2d8a40abd5830cf5ddc15d649de4}\label{_huffman_8c_a246d2d8a40abd5830cf5ddc15d649de4}} 
+\index{Huffman.\+c@{Huffman.\+c}!affiche\+\_\+code@{affiche\+\_\+code}}
+\index{affiche\+\_\+code@{affiche\+\_\+code}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+code()}{affiche\_code()}}
+{\footnotesize\ttfamily void affiche\+\_\+code (\begin{DoxyParamCaption}\item[{char $\ast$}]{code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+fonction d\textquotesingle{}affichage du tableau du code binaire 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+bin} & tableau du code binaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_acf6f954911d13cd20715a00cc0f258bf}\label{_huffman_8c_acf6f954911d13cd20715a00cc0f258bf}} 
+\index{Huffman.\+c@{Huffman.\+c}!affiche\+\_\+code\+\_\+ext@{affiche\+\_\+code\+\_\+ext}}
+\index{affiche\+\_\+code\+\_\+ext@{affiche\+\_\+code\+\_\+ext}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{affiche\+\_\+code\+\_\+ext()}{affiche\_code\_ext()}}
+{\footnotesize\ttfamily void affiche\+\_\+code\+\_\+ext (\begin{DoxyParamCaption}\item[{char $\ast$}]{new\+\_\+code\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]},  }\item[{int}]{taille\+\_\+arbre }\end{DoxyParamCaption})}
+
+
+
+fonction d\textquotesingle{}affichage d\textquotesingle{}un tableau du code binaire apres extraction 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em new\+\_\+code} & tableau du code binaire extract \\
+\hline
+\mbox{\tt in}  & {\em taille\+\_\+arbre} & taille tableau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a0bb5e256b4923fc1810315359ce70270}\label{_huffman_8c_a0bb5e256b4923fc1810315359ce70270}} 
+\index{Huffman.\+c@{Huffman.\+c}!binaire@{binaire}}
+\index{binaire@{binaire}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{binaire()}{binaire()}}
+{\footnotesize\ttfamily void binaire (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]},  }\item[{int}]{new\+\_\+taille,  }\item[{char $\ast$}]{code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+rempli le tableau correpondant au code binaire de l\textquotesingle{}arbre 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em new\+\_\+nbocc} & tableau de l\textquotesingle{}arbre d\textquotesingle{}Huffman \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+taille} & taille du tableau de l\textquotesingle{}arbre \\
+\hline
+ & {\em code\+\_\+bin} & tableau du code binaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a60fd53f592a14f4524c29a833de459da}\label{_huffman_8c_a60fd53f592a14f4524c29a833de459da}} 
+\index{Huffman.\+c@{Huffman.\+c}!calcul\+\_\+nbdiff@{calcul\+\_\+nbdiff}}
+\index{calcul\+\_\+nbdiff@{calcul\+\_\+nbdiff}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{calcul\+\_\+nbdiff()}{calcul\_nbdiff()}}
+{\footnotesize\ttfamily int calcul\+\_\+nbdiff (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+calcul le nombre de caractere différente 
+
+\begin{DoxyReturn}{Returns}
+entier \+: nombre de caractere différent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_8c_ada60aa9ed36538ba8d86e288e2301e4e}\label{_huffman_8c_ada60aa9ed36538ba8d86e288e2301e4e}} 
+\index{Huffman.\+c@{Huffman.\+c}!comp\+\_\+feuille@{comp\+\_\+feuille}}
+\index{comp\+\_\+feuille@{comp\+\_\+feuille}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{comp\+\_\+feuille()}{comp\_feuille()}}
+{\footnotesize\ttfamily void comp\+\_\+feuille (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]},  }\item[{int}]{new\+\_\+taille }\end{DoxyParamCaption})}
+
+
+
+rempli l\textquotesingle{}arbre de Huffman créer au dessus 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em new\+\_\+nbocc} & tableau correspondant à l\textquotesingle{}arbre \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+taille} & taille du tableau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a67b308623973a74b8a3d528da4999a90}\label{_huffman_8c_a67b308623973a74b8a3d528da4999a90}} 
+\index{Huffman.\+c@{Huffman.\+c}!compression@{compression}}
+\index{compression@{compression}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{compression()}{compression()}}
+{\footnotesize\ttfamily void compression (\begin{DoxyParamCaption}\item[{char $\ast$}]{code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]},  }\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Compresse le fichier grace au tableau du code binaire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+bin} & tableau du code binaire \\
+\hline
+{\em fichier} & le fichier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_af8ec6d65f7972a5352873f62669474ba}\label{_huffman_8c_af8ec6d65f7972a5352873f62669474ba}} 
+\index{Huffman.\+c@{Huffman.\+c}!decompression@{decompression}}
+\index{decompression@{decompression}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{decompression()}{decompression()}}
+{\footnotesize\ttfamily void decompression (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
+
+
+
+decompresse un fichier compresser 
+
+
+\begin{DoxyParams}{Parameters}
+{\em le} & fichier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a3ff81be6b2fb4026b46fcb1152e9a08a}\label{_huffman_8c_a3ff81be6b2fb4026b46fcb1152e9a08a}} 
+\index{Huffman.\+c@{Huffman.\+c}!init\+\_\+binaire@{init\+\_\+binaire}}
+\index{init\+\_\+binaire@{init\+\_\+binaire}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+binaire()}{init\_binaire()}}
+{\footnotesize\ttfamily void init\+\_\+binaire (\begin{DoxyParamCaption}\item[{char $\ast$}]{code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]},  }\item[{int}]{new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+initialise le tableau correspondant au code binaire de l\textquotesingle{}arbre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+bin} & tableau du code binaire \\
+\hline
+{\em new\+\_\+nbocc} & tableau de l\textquotesingle{}arbre d\textquotesingle{}Huffman \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a6228456004a980a8cbf37dc7e7fe4781}\label{_huffman_8c_a6228456004a980a8cbf37dc7e7fe4781}} 
+\index{Huffman.\+c@{Huffman.\+c}!itoa@{itoa}}
+\index{itoa@{itoa}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{itoa()}{itoa()}}
+{\footnotesize\ttfamily char$\ast$ itoa (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{char $\ast$}]{s }\end{DoxyParamCaption})}
+
+
+
+Change entier en string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em i} & entier a transformer \\
+\hline
+ & {\em s} & string modifier\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+s 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{_huffman_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{Huffman.\+c@{Huffman.\+c}!main@{main}}
+\index{main@{main}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Fonction Main. 
+
+Avec 3modes de lancement a choisir une fois le programme éxécuté (Compression/\+Décompression/\+Debug)
+
+\begin{DoxyReturn}{Returns}
+\{ description\+\_\+of\+\_\+the\+\_\+return\+\_\+value \} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_8c_ab4139f414ed775901f0814c8055d5e87}\label{_huffman_8c_ab4139f414ed775901f0814c8055d5e87}} 
+\index{Huffman.\+c@{Huffman.\+c}!read\+\_\+arbre@{read\+\_\+arbre}}
+\index{read\+\_\+arbre@{read\+\_\+arbre}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{read\+\_\+arbre()}{read\_arbre()}}
+{\footnotesize\ttfamily void read\+\_\+arbre (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier,  }\item[{char $\ast$}]{new\+\_\+code\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+extrait le code binaire d\textquotesingle{}un arbre stocker dans un fichier texte 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & Le fichier \\
+\hline
+{\em new\+\_\+code} & tableau de code binaire \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a7c1d2299054f08c8e55b8379061939a4}\label{_huffman_8c_a7c1d2299054f08c8e55b8379061939a4}} 
+\index{Huffman.\+c@{Huffman.\+c}!read\+\_\+taille@{read\+\_\+taille}}
+\index{read\+\_\+taille@{read\+\_\+taille}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{read\+\_\+taille()}{read\_taille()}}
+{\footnotesize\ttfamily int read\+\_\+taille (\begin{DoxyParamCaption}\item[{char $\ast$}]{fichier }\end{DoxyParamCaption})}
+
+
+
+Lis la taille de l\textquotesingle{}arbre grace au fichier texte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fichier} & fichier texte\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+taille de l\textquotesingle{}arbre 
+\end{DoxyReturn}
+A\+T\+T\+E\+N\+T\+I\+ON \mbox{\Hypertarget{_huffman_8c_a650f579a882a3ad87b3784175480e6e0}\label{_huffman_8c_a650f579a882a3ad87b3784175480e6e0}} 
+\index{Huffman.\+c@{Huffman.\+c}!strsplit@{strsplit}}
+\index{strsplit@{strsplit}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{strsplit()}{strsplit()}}
+{\footnotesize\ttfamily char$\ast$$\ast$ strsplit (\begin{DoxyParamCaption}\item[{char $\ast$}]{txt,  }\item[{char}]{sep }\end{DoxyParamCaption})}
+
+
+
+découpe une chaine de caractere 
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em txt} & prefixe \\
+\hline
+\mbox{\tt in}  & {\em sep} & suffixe\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+prefixe + suffixe 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_8c_af1002effe6c90c63b009eae96150109a}\label{_huffman_8c_af1002effe6c90c63b009eae96150109a}} 
+\index{Huffman.\+c@{Huffman.\+c}!tab\+\_\+feuille@{tab\+\_\+feuille}}
+\index{tab\+\_\+feuille@{tab\+\_\+feuille}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{tab\+\_\+feuille()}{tab\_feuille()}}
+{\footnotesize\ttfamily void tab\+\_\+feuille (\begin{DoxyParamCaption}\item[{int}]{new\+\_\+nbocc\mbox{[}$\,$\mbox{]}\mbox{[}5\mbox{]},  }\item[{int}]{new\+\_\+taille }\end{DoxyParamCaption})}
+
+
+
+Initialise l\textquotesingle{}abre d\textquotesingle{}Huffman 0 -\/$>$ fils gauche 1 -\/$>$ fils droit 2 -\/$>$ pere 3 -\/$>$ nom 4 -\/$>$ nombre occurence. 
+
+-\/1 par défault partout et -\/2 pour le pere de la racine
+
+
+\begin{DoxyParams}[1]{Parameters}
+ & {\em new\+\_\+nbocc} & tableau d\textquotesingle{}entier correspondant à l\textquotesingle{}arbre \\
+\hline
+\mbox{\tt in}  & {\em new\+\_\+taille} & taille du tableau \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_8c_a740df2e1d5277c49df31ef01aa331661}\label{_huffman_8c_a740df2e1d5277c49df31ef01aa331661}} 
+\index{Huffman.\+c@{Huffman.\+c}!verif@{verif}}
+\index{verif@{verif}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{verif()}{verif()}}
+{\footnotesize\ttfamily int verif (\begin{DoxyParamCaption}\item[{char $\ast$}]{monfic }\end{DoxyParamCaption})}
+
+
+
+verifie si le fichier texte de lecture est ouvrable et initialise l\textquotesingle{}occurence chaque éléments 
+
+
+\begin{DoxyParams}{Parameters}
+{\em monfic} & fichier texte a convertir\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 si lecture possible, 1 sinon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_8c_a97b9fadd6fd2e427965ac1308c6c66aa}\label{_huffman_8c_a97b9fadd6fd2e427965ac1308c6c66aa}} 
+\index{Huffman.\+c@{Huffman.\+c}!write\+\_\+code@{write\+\_\+code}}
+\index{write\+\_\+code@{write\+\_\+code}!Huffman.\+c@{Huffman.\+c}}
+\subsubsection{\texorpdfstring{write\+\_\+code()}{write\_code()}}
+{\footnotesize\ttfamily void write\+\_\+code (\begin{DoxyParamCaption}\item[{char $\ast$}]{code\+\_\+bin\mbox{[}$\,$\mbox{]}\mbox{[}2\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Rempli un fichier texte du code binaire de l\textquotesingle{}arbre. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em code\+\_\+bin} & tableau du code binaire \\
+\hline
+\end{DoxyParams}

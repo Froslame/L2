@@ -1,0 +1,19 @@
+#Variable
+CC=g++ -Wall 
+
+F=cellule
+
+#Commande
+all : ${F}
+
+$(F) : $(F).o $(F)_main.o
+	$(CC) $(F).o $(F)_main.o -o $(F)
+
+$(F).o : $(F).cpp
+	$(CC) -c $(F).cpp
+
+$(F)_main.o : $(F)_main.cpp $(F).h
+	$(CC) -c $(F)_main.cpp
+
+clean:
+	rm -rf *.o

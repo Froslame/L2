@@ -1,0 +1,55 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+#include "tabOptions.h"
+
+#include <exception>
+
+using namespace std;
+
+/*
+#############################
+#   espace lance la balle   #
+#gauche droit en déplacement#
+#   q quitte la partie      #
+#############################
+*/
+
+tabOptions listOptions(int argc,char** argv){
+  tabOptions opts;
+  opts.addOption(Options(1, "--help", "-h",
+			 "Affiche l'aide du programme"));
+  opts.addOption(Options(2, "--version", "-v",
+			 "Version 8Nov"));
+  opts.addOption(Options(3, "--auteur", "-a",
+			 "MOI lelxd"));
+  return opts;
+}
+
+void LoadOptions(tabOptions opts,int argc,char** argv){
+  for (int i = 1; i < argc ; i++) {
+    if (opts.getOptionId(argv[i]) != -1) {
+      cout<<opts[i].getDescription()<<endl;
+    }
+  }
+}
+
+void startProgram(int argc,char** argv){
+  if(argc>4){
+    cerr<<"SURCHARGE OPTION"<<endl;
+    terminate();
+  }
+  tabOptions opts=listOptions(argc,argv);
+  LoadOptions(opts,argc,argv);
+}
+
+
+
+
+int main(int argc, char** argv){
+  startProgram(argc,argv);//Initialise le jeu
+  //myProgram();//Le jeu
+  //stopProgram();//Stop le jeu
+  return 0;
+}

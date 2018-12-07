@@ -1,0 +1,11 @@
+#ifndef BRIQUE_H
+#define BRIQUE_H
+
+#include <string>
+#include <ncurses.h>
+
+class Brique{
+
+};
+
+#endif

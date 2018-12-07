@@ -1,0 +1,16 @@
+DROP TABLE voiture;
+DROP TABLE personne;
+
+CREATE TABLE personne(
+id CHARACTER(4)PRIMARY KEY,
+nom CHARACTER(40)NOT NULL,
+prenom CHARACTER(40)
+);
+
+CREATE TABLE voiture(
+immat CHARACTER(8)PRIMARY KEY,
+marque CHARACTER(40),
+annee NUMERIC(4),
+prix NUMERIC(10)CHECK(prix>0),
+idProp CHARACTER(4)REFERENCES personne(id)
+);

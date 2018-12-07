@@ -1,0 +1,367 @@
+.TH "Huffman.c" 3 "Mon Dec 3 2018" "Version 1.29" "Huffman" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Huffman.c \- Compresse et Décompresse des fichiers texte grace a la méthode d'Huffman\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <string\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+\fC#include <math\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBEDF\fP   \-1"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "char * \fBitoa\fP (int i, char *s)"
+.br
+.RI "Change entier en string\&. "
+.ti -1c
+.RI "char ** \fBstrsplit\fP (char *txt, char sep)"
+.br
+.RI "découpe une chaine de caractere "
+.ti -1c
+.RI "int \fBverif\fP (char *monfic)"
+.br
+.RI "verifie si le fichier texte de lecture est ouvrable et initialise l'occurence chaque éléments "
+.ti -1c
+.RI "void \fBcalcul_nbocc\fP ()"
+.br
+.RI "Affiche chaque caractere : nombre d'occurence\&. "
+.ti -1c
+.RI "int \fBcalcul_nbdiff\fP ()"
+.br
+.RI "calcul le nombre de caractere différente "
+.ti -1c
+.RI "void \fBtab_feuille\fP (int new_nbocc[][5], int new_taille)"
+.br
+.RI "Initialise l'abre d'Huffman 0 -> fils gauche 1 -> fils droit 2 -> pere 3 -> nom 4 -> nombre occurence\&. "
+.ti -1c
+.RI "void \fBcomp_feuille\fP (int new_nbocc[][5], int new_taille)"
+.br
+.RI "rempli l'arbre de Huffman créer au dessus "
+.ti -1c
+.RI "void \fBaffiche\fP (int new_nbocc[][5], int new_taille)"
+.br
+.RI "fonction d'affichage du tableau correspondant à l'arbre "
+.ti -1c
+.RI "void \fBinit_binaire\fP (char *code_bin[][2], int new_nbocc[][5])"
+.br
+.RI "initialise le tableau correspondant au code binaire de l'arbre "
+.ti -1c
+.RI "void \fBbinaire\fP (int new_nbocc[][5], int new_taille, char *code_bin[][2])"
+.br
+.RI "rempli le tableau correpondant au code binaire de l'arbre "
+.ti -1c
+.RI "void \fBaffiche_code\fP (char *code_bin[][2])"
+.br
+.RI "fonction d'affichage du tableau du code binaire "
+.ti -1c
+.RI "void \fBaffiche_code_ext\fP (char *new_code[][2], int taille_arbre)"
+.br
+.RI "fonction d'affichage d'un tableau du code binaire apres extraction "
+.ti -1c
+.RI "void \fBwrite_code\fP (char *code_bin[][2])"
+.br
+.RI "Rempli un fichier texte du code binaire de l'arbre\&. "
+.ti -1c
+.RI "int \fBread_taille\fP (char *fichier)"
+.br
+.RI "Lis la taille de l'arbre grace au fichier texte\&. "
+.ti -1c
+.RI "void \fBread_arbre\fP (char *fichier, char *new_code[][2])"
+.br
+.RI "extrait le code binaire d'un arbre stocker dans un fichier texte "
+.ti -1c
+.RI "void \fBcompression\fP (char *code_bin[][2], char *fichier)"
+.br
+.RI "Compresse le fichier grace au tableau du code binaire\&. "
+.ti -1c
+.RI "void \fBdecompression\fP (char *fichier)"
+.br
+.RI "decompresse un fichier compresser "
+.ti -1c
+.RI "int \fBmain\fP (int argc, char *argv[])"
+.br
+.RI "Fonction Main\&. "
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "int \fBnbocc\fP [256]"
+.br
+.ti -1c
+.RI "int \fBtaille\fP =0"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Compresse et Décompresse des fichiers texte grace a la méthode d'Huffman\&. 
+
+
+.PP
+\fBAuthor:\fP
+.RS 4
+Gracia-Moulis Kevin 
+.RE
+.PP
+\fBVersion:\fP
+.RS 4
+1\&.29 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+2 Decembre 2018 
+.RE
+.PP
+
+.SH "Function Documentation"
+.PP 
+.SS "void affiche (int new_nbocc[][5], int new_taille)"
+
+.PP
+fonction d'affichage du tableau correspondant à l'arbre 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_nbocc\fP tableau a afficher 
+.br
+\fInew_taille\fP taille tableau 
+.RE
+.PP
+
+.SS "void affiche_code (char * code_bin[][2])"
+
+.PP
+fonction d'affichage du tableau du code binaire 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode_bin\fP tableau du code binaire 
+.RE
+.PP
+
+.SS "void affiche_code_ext (char * new_code[][2], int taille_arbre)"
+
+.PP
+fonction d'affichage d'un tableau du code binaire apres extraction 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_code\fP tableau du code binaire extract 
+.br
+\fItaille_arbre\fP taille tableau 
+.RE
+.PP
+
+.SS "void binaire (int new_nbocc[][5], int new_taille, char * code_bin[][2])"
+
+.PP
+rempli le tableau correpondant au code binaire de l'arbre 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_nbocc\fP tableau de l'arbre d'Huffman 
+.br
+\fInew_taille\fP taille du tableau de l'arbre 
+.br
+\fIcode_bin\fP tableau du code binaire 
+.RE
+.PP
+
+.SS "int calcul_nbdiff ()"
+
+.PP
+calcul le nombre de caractere différente 
+.PP
+\fBReturns:\fP
+.RS 4
+entier : nombre de caractere différent 
+.RE
+.PP
+
+.SS "void comp_feuille (int new_nbocc[][5], int new_taille)"
+
+.PP
+rempli l'arbre de Huffman créer au dessus 
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_nbocc\fP tableau correspondant à l'arbre 
+.br
+\fInew_taille\fP taille du tableau 
+.RE
+.PP
+
+.SS "void compression (char * code_bin[][2], char * fichier)"
+
+.PP
+Compresse le fichier grace au tableau du code binaire\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode_bin\fP tableau du code binaire 
+.br
+\fIfichier\fP le fichier 
+.RE
+.PP
+
+.SS "void decompression (char * fichier)"
+
+.PP
+decompresse un fichier compresser 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIle\fP fichier 
+.RE
+.PP
+
+.SS "void init_binaire (char * code_bin[][2], int new_nbocc[][5])"
+
+.PP
+initialise le tableau correspondant au code binaire de l'arbre 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode_bin\fP tableau du code binaire 
+.br
+\fInew_nbocc\fP tableau de l'arbre d'Huffman 
+.RE
+.PP
+
+.SS "char* itoa (int i, char * s)"
+
+.PP
+Change entier en string\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIi\fP entier a transformer 
+.br
+\fIs\fP string modifier
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+s 
+.RE
+.PP
+
+.SS "int main (int argc, char * argv[])"
+
+.PP
+Fonction Main\&. Avec 3modes de lancement a choisir une fois le programme éxécuté (Compression/Décompression/Debug)
+.PP
+\fBReturns:\fP
+.RS 4
+{ description_of_the_return_value } 
+.RE
+.PP
+
+.SS "void read_arbre (char * fichier, char * new_code[][2])"
+
+.PP
+extrait le code binaire d'un arbre stocker dans un fichier texte 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfichier\fP Le fichier 
+.br
+\fInew_code\fP tableau de code binaire 
+.RE
+.PP
+
+.SS "int read_taille (char * fichier)"
+
+.PP
+Lis la taille de l'arbre grace au fichier texte\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfichier\fP fichier texte
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+taille de l'arbre 
+.RE
+.PP
+ATTENTION 
+.SS "char** strsplit (char * txt, char sep)"
+
+.PP
+découpe une chaine de caractere 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItxt\fP prefixe 
+.br
+\fIsep\fP suffixe
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+prefixe + suffixe 
+.RE
+.PP
+
+.SS "void tab_feuille (int new_nbocc[][5], int new_taille)"
+
+.PP
+Initialise l'abre d'Huffman 0 -> fils gauche 1 -> fils droit 2 -> pere 3 -> nom 4 -> nombre occurence\&. -1 par défault partout et -2 pour le pere de la racine
+.PP
+\fBParameters:\fP
+.RS 4
+\fInew_nbocc\fP tableau d'entier correspondant à l'arbre 
+.br
+\fInew_taille\fP taille du tableau 
+.RE
+.PP
+
+.SS "int verif (char * monfic)"
+
+.PP
+verifie si le fichier texte de lecture est ouvrable et initialise l'occurence chaque éléments 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImonfic\fP fichier texte a convertir
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+0 si lecture possible, 1 sinon 
+.RE
+.PP
+
+.SS "void write_code (char * code_bin[][2])"
+
+.PP
+Rempli un fichier texte du code binaire de l'arbre\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode_bin\fP tableau du code binaire 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Huffman from the source code\&.

@@ -1,0 +1,12 @@
+
+
+int main(int argc, char* argv[], char *env[]){
+
+printf("Il y a %i paramètres passés à la ligne de commande.",argc)
+
+for(int i=0;i<argc;i++){
+	printf("Parametre %i : %c",i,argv[i])
+}
+
+return 0;
+}

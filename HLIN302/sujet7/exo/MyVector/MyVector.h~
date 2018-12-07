@@ -1,0 +1,35 @@
+#ifndef VECTOR_H
+#define VECTOR_H
+
+#include <iostream>
+
+template<typename T>
+class MyVector{
+ private:
+  T* _tab;
+  size_t _n;
+  size_t _nmax;
+
+  void extend();
+ public:
+  //Constructeur
+  MyVector();
+  MyVector(size_t _nmax);
+  MyVector(const MyVector&);
+  //Destructeur
+  ~MyVector();
+  //Lecture
+  T& at(size_t _n);
+  const T& at(size_t)const;
+  //Fichier
+  void read(std::istream&);
+  void write(std::ostream&)const;
+  //Ecriture
+  void push_back(const T&);
+  void erase(size_t _n);
+  size_t find(const T&)const;
+}
+
+#include "MyVector.ttc"
+
+#endif

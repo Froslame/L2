@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#find ~ -name |egrep "-l -s &* *" -exec "mv {} ./DUMP"
+
+#find ~ -egrep "-l -s &* *" -exec "mv {} ./DUMP
+
+egrep -l -s $* * > liste
+
+while read line
+do
+    mv "$line" ./DUMP
+done < liste
+
+#echo "$var"
+
+#-exec mv ./DUMP

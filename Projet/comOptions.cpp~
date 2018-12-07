@@ -1,0 +1,27 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+#include "comOptions.h"
+#include "tabOptions.h"
+
+using namespace std;
+
+tabOptions listOptions(int argc,char** argv){
+  tabOptions opts;
+  opts.addOption(Options(1, "--help", "-h",
+			 "Affiche l'aide du programme"));
+  opts.addOption(Options(2, "--version", "-v",
+			 "Version 8Nov"));
+  opts.addOption(Options(3, "--auteur", "-a",
+			 "MOI lelxd"));
+  return opts;
+}
+
+void LoadOptions(tabOptions opts,int argc,char** argv){
+  for (int i = 1; i < argc ; i++) {
+    if (opts.getOptionId(argv[i]) != -1) {
+      cout<<opts[i].getDescription()<<endl;
+    }
+  }
+}

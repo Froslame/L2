@@ -1,0 +1,15 @@
+#include "prog.h"
+#include "prog1.h"
+
+int main(int argc, char** argv){
+  int x=0;
+  Population JDV;
+  JDV.init(100); 
+  JDV.print();
+  do{
+    JDV=JDV.next();
+    JDV.print();
+    for(int k=0;k!=19999999;k++);
+  }while(x==0);
+  return 0;
+}

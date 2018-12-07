@@ -1,0 +1,3 @@
+
+
+int impair(unsigned int);

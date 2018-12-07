@@ -1,0 +1,20 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+int main(int argc, char** argv){
+
+  
+  ifstream X;
+  string l;
+  cout<<"Début Prog"<<endl;
+  if(argc==1){
+    cout<<"Saisissez un fichier"<<endl;
+    return 1;
+  
+  }
+  
+  return 0;
+}

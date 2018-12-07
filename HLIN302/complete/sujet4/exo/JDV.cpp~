@@ -1,0 +1,85 @@
+#include <iostream>
+#include <cstdlib>
+#include <exception>
+#include <string>
+#include <fstream>
+
+#include "JDV.h"
+
+using namespace std; 
+
+void JeuDeLaVie::nettoie(string& s){
+  size_t a = s.find_first_of("#"); // npos <-> -1 en entier non signé <-> long max
+  s = s.substr(0,a); 
+  int deb=0,fin=s.size()-1; // fin = s.size()-1
+  while(deb<fin){
+    while(s[deb]==' '){deb++;}
+    while(s[fin]==' '){fin--;}
+  }
+  s = s.substr(deb,fin-deb+1);
+}
+
+bool JeuDeLaVie::findCleVal(std::string& a, std::string& b, std::string& s){
+  /*
+  switch(s[0]){
+  case 'D': a="Dimension";break;
+  case 'P': a="Probability";break;
+  case 'C': a="Cell";break;
+  default : return false;
+  }
+  */
+  nettoie(s);
+  if(s==string(""))return false;
+  size_t k = s.find_first_of(":");
+  if(k==string::npos){
+    cerr<<"MAL FORME"<<endl;
+    terminate();
+  }
+  a=s.substr(0,k);
+  b=s.substr(k+1);
+  nettoie(a);
+  nettoie(b);
+  return true;
+}
+
+void JeuDeLaVie::TraiteOption(const string &cle, const string &valeur, size_t num_ligne){
+  if (cle == "Dimension") {
+    POP.setDimension(atoi(valeur.c_str()));
+    //POP.reset();
+  }
+  if (cle == "Probability") {
+    POP.setProbability(atof(valeur.c_str()));
+    //POP.reset();
+  }
+  if (cle == "Cell") {
+    size_t x, y;
+    size_t pos = valeur.find_first_of("x, ");
+    if (pos == string::npos || valeur[pos] == '\0') {
+      cerr << "Le fichier est mal formé. Vérifiez la syntaxe de la ligne "<< num_ligne << endl;
+    }
+    else {
+      x = atoi(valeur.substr(0, pos).c_str());
+      y = atoi(valeur.substr(pos).c_str());
+      POP.birth(x,y);    
+    }
+  }
+}
+
+JeuDeLaVie::JeuDeLaVie():POP(8,0.25){}
+
+void JeuDeLaVie::loadConfig(string config){
+  string l;
+  ifstream flux(config,ios::in);
+  string a,b;
+  size_t ligne=0;
+  while(!flux.eof()){
+    a="";b="";
+    getline(flux,l);
+    if(findCleVal(a,b,l)){
+      TraiteOption(a,b,ligne);
+    }
+    ligne++;
+  }
+  flux.close();
+}
+

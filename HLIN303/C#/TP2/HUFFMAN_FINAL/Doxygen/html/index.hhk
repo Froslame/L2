@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD><BODY>
+<OBJECT type="text/site properties">
+<param name="FrameName" value="right">
+</OBJECT>
+<UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a445288c409772fb235075e0e34273dac"><param name="Name" value="affiche"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a246d2d8a40abd5830cf5ddc15d649de4"><param name="Name" value="affiche_code"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#acf6f954911d13cd20715a00cc0f258bf"><param name="Name" value="affiche_code_ext"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a0bb5e256b4923fc1810315359ce70270"><param name="Name" value="binaire"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a60fd53f592a14f4524c29a833de459da"><param name="Name" value="calcul_nbdiff"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a48ff9ba9d2005795277eedd0537a81ab"><param name="Name" value="calcul_nbocc"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#ada60aa9ed36538ba8d86e288e2301e4e"><param name="Name" value="comp_feuille"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a67b308623973a74b8a3d528da4999a90"><param name="Name" value="compression"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#af8ec6d65f7972a5352873f62669474ba"><param name="Name" value="decompression"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a598ea65f0a8f860fc7e16343fe1851a1"><param name="Name" value="EDF"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html"><param name="Name" value="Huffman.c"></OBJECT>
+  <UL>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a445288c409772fb235075e0e34273dac"><param name="Name" value="affiche"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a246d2d8a40abd5830cf5ddc15d649de4"><param name="Name" value="affiche_code"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#acf6f954911d13cd20715a00cc0f258bf"><param name="Name" value="affiche_code_ext"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a0bb5e256b4923fc1810315359ce70270"><param name="Name" value="binaire"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a60fd53f592a14f4524c29a833de459da"><param name="Name" value="calcul_nbdiff"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a48ff9ba9d2005795277eedd0537a81ab"><param name="Name" value="calcul_nbocc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#ada60aa9ed36538ba8d86e288e2301e4e"><param name="Name" value="comp_feuille"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a67b308623973a74b8a3d528da4999a90"><param name="Name" value="compression"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#af8ec6d65f7972a5352873f62669474ba"><param name="Name" value="decompression"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a598ea65f0a8f860fc7e16343fe1851a1"><param name="Name" value="EDF"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a3ff81be6b2fb4026b46fcb1152e9a08a"><param name="Name" value="init_binaire"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a6228456004a980a8cbf37dc7e7fe4781"><param name="Name" value="itoa"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a0ddf1224851353fc92bfbff6f499fa97"><param name="Name" value="main"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#afd9e4dd7c77efccb7a54d660960971d6"><param name="Name" value="nbocc"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#ab4139f414ed775901f0814c8055d5e87"><param name="Name" value="read_arbre"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a7c1d2299054f08c8e55b8379061939a4"><param name="Name" value="read_taille"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a650f579a882a3ad87b3784175480e6e0"><param name="Name" value="strsplit"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#af1002effe6c90c63b009eae96150109a"><param name="Name" value="tab_feuille"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a29bf3fc0ffe4e72e45f0c84ab4f8cd1e"><param name="Name" value="taille"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a740df2e1d5277c49df31ef01aa331661"><param name="Name" value="verif"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a97b9fadd6fd2e427965ac1308c6c66aa"><param name="Name" value="write_code"></OBJECT>
+  </UL>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a3ff81be6b2fb4026b46fcb1152e9a08a"><param name="Name" value="init_binaire"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a6228456004a980a8cbf37dc7e7fe4781"><param name="Name" value="itoa"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a0ddf1224851353fc92bfbff6f499fa97"><param name="Name" value="main"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#afd9e4dd7c77efccb7a54d660960971d6"><param name="Name" value="nbocc"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#ab4139f414ed775901f0814c8055d5e87"><param name="Name" value="read_arbre"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a7c1d2299054f08c8e55b8379061939a4"><param name="Name" value="read_taille"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a650f579a882a3ad87b3784175480e6e0"><param name="Name" value="strsplit"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#af1002effe6c90c63b009eae96150109a"><param name="Name" value="tab_feuille"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a29bf3fc0ffe4e72e45f0c84ab4f8cd1e"><param name="Name" value="taille"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a740df2e1d5277c49df31ef01aa331661"><param name="Name" value="verif"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="_huffman_8c.html#a97b9fadd6fd2e427965ac1308c6c66aa"><param name="Name" value="write_code"></OBJECT>
+</UL>
+</BODY>
+</HTML>

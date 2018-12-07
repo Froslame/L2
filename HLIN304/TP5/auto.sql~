@@ -1,0 +1,5 @@
+DROP TABLE personne;
+DROP TABLE voiture;
+
+CREATE TABLE personne();
+CREATE TABLE ();
